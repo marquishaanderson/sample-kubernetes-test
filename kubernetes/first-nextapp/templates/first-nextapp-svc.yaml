@@ -1,14 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "first-nextapp.fullname" . }}-first-nextapp-svc
+  creationTimestamp: null
   labels:
     app: first-nextapp
-  {{- include "first-nextapp.labels" . | nindent 4 }}
+  name: first-nextapp-svc
 spec:
-  type: {{ .Values.firstNextappSvc.type }}
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
   selector:
     app: first-nextapp
-  {{- include "first-nextapp.selectorLabels" . | nindent 4 }}
-  ports:
-	{{- .Values.firstNextappSvc.ports | toYaml | nindent 2 -}}
+  type: NodePort
+status:
+  loadBalancer: {}
