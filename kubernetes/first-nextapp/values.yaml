@@ -1,0 +1,7 @@
+firstNextappSvc:
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+  type: NodePort
+kubernetesClusterDomain: cluster.local

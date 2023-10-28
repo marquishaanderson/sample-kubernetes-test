@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "first-nextapp.fullname" . }}-first-nextapp-svc
+  labels:
+    app: first-nextapp
+  {{- include "first-nextapp.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.firstNextappSvc.type }}
+  selector:
+    app: first-nextapp
+  {{- include "first-nextapp.selectorLabels" . | nindent 4 }}
+  ports:
+	{{- .Values.firstNextappSvc.ports | toYaml | nindent 2 -}}
