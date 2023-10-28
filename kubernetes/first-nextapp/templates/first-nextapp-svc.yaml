@@ -7,9 +7,9 @@ metadata:
   name: first-nextapp-svc
 spec:
   ports:
-  - port: 3000
-    protocol: TCP
-    targetPort: 3000
+  - port: {{ .Values.service.port }}
+    protocol: {{ .Values.service.protocol }}
+    targetPort: {{ .Values.service.targetPort }}
   selector:
     app: first-nextapp
   type: NodePort
