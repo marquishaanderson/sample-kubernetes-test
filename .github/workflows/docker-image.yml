@@ -32,10 +32,10 @@ jobs:
         # Specifies whether the given registry is ECR (auto, true or false)
         ecr: auto # optional, default is auto
         # Log out from the Docker registry at the end of a job
-        logout: false # optional, default is true
+        logout: true # optional, default is true
         
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ env.IMAGE_NAME }}
+      run: docker build . --file Dockerfile --tag ${{ env.IMAGE_NAME }} --target development
 
     - name: Push the Docker image
       run: docker push ${{ env.IMAGE_NAME }}
