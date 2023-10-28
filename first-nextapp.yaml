@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: first-nextapp
+  name: first-nextapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: first-nextapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: first-nextapp
+    spec:
+      containers:
+      - image: snipersgee/kb-next-app:v1
+        name: kb-next-app
+        ports:
+        - containerPort: 3000
+        resources: {}
+status: {}
