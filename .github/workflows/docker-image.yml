@@ -34,4 +34,4 @@ jobs:
         # Image Build Version
         image_version: v1.0.0
         # Docker File Directory, Default Current Directory (.)
-        docker_file: Dockerfile # optional, default is .
+        docker_file: . # optional, default is .
