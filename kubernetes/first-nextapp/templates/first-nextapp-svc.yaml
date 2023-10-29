@@ -7,9 +7,9 @@ metadata:
   name: first-nextapp-svc
 spec:
   ports:
-  - port: {{ .Values.service.port }}
-    protocol: {{ .Values.service.protocol }}
-    targetPort: {{ .Values.service.targetPort }}
+  - port: {{ .Values.firstNextappSvc.port }}
+    protocol: {{ .Values.firstNextappSvc.protocol }}
+    targetPort: {{ .Values.firstNextappSvc.targetPort }}
   selector:
     app: first-nextapp
   type: NodePort
