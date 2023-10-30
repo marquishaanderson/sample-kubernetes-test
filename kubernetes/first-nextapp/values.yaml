@@ -3,7 +3,8 @@ firstNextappSvc:
   protocol: TCP
   targetPort: 3000
   type: NodePort
-  kubernetesClusterDomain: cluster.local
+
+kubernetesClusterDomain: cluster.local
 
 ingress:
   enabled: false
