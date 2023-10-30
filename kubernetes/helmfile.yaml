@@ -1,0 +1,19 @@
+repositories:
+ - name: first-nextapp
+   url: git+https://github.com/marquishaanderson/sample-kubernetes-test.git@kubernetes/first-nextapp?ref=main&sparse=0
+   verify: false
+
+ - name: helloworld
+   url: git+https://github.com/marquishaanderson/sample-kubernetes-test.git@kubernetes/helloworld?ref=main&sparse=0
+   verify: false
+
+releases:
+- name: first-nextapp-dev
+  namespace: default
+  chart: first-nextapp/first-nextapp
+  installed: true
+
+- name: helloworld-helm-dev
+  namespace: helm
+  chart: helloworld/helloworld
+  installed: true
