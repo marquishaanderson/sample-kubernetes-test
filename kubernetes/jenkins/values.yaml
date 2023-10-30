@@ -83,13 +83,13 @@ autoscaling:
 volumes: 
 - name: jenkins-home
   hostPath:
-    path: /var/jenkins_home
+    path: /data
     type: Directory
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
 - name: jenkins-home
-  mountPath: /data
+  mountPath: /var/jenkins_home
 
 nodeSelector: {}
 
