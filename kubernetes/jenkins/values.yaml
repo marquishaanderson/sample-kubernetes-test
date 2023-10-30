@@ -8,7 +8,7 @@ image:
   repository: jenkins/jenkins
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "lts-jdk11"
 
 imagePullSecrets: []
 nameOverride: ""
